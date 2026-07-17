@@ -1,15 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const PORT = 3000; 
+
 
 app.use(express.json());
 
-let turnos = [
-    {id: 1, paciente: "juan perez", dni: "126313", especialidad: "cardiologia"},
-    {id: 2, paciente: "martin aguirre", dni: "4342342", especialidad: "cardiologia"},
-    {id: 3, paciente: "marcos lopes", dni: "12332312", especialidad: "cardiologia"},
-    {id: 4, paciente: "susana gimenez", dni: "45645646", especialidad: "cardiologia"}
-]
+
 
 app.get("/api/v1/turnos", (req, res) => {
     res.json({total: turnos.length, data: turnos });
@@ -46,6 +42,10 @@ app.delete("/api/v1/turnos/:id", (req, res) => {
 
     turnos = turnos.filter(t => t.id !== parseInt(id));
     res.status(200).json({message: "Turno eliminado exitosamente", data: turnos})
+})
+
+app.get("/api/v1/turnos", (req, res) => {
+    res.json({total: turnos.especilidad})
 })
 
 
