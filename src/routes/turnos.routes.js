@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { getTunros, createTurnos, deleteTurnos } = require("../controllers/turnos.controllers");
+const { getTurnos, createTurnos, deleteTurnos } = require("../controllers/turnos.controllers");
 
-router.get("/", getTunros);
+router.get("/", getTurnos);
 router.post("/", createTurnos);
 router.delete("/:id", deleteTurnos);
 
+module.exports = router;

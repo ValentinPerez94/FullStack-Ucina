@@ -6,8 +6,8 @@ let turnos = [
 ]
 
 const respuestaEstandar = (res, status, success, message, data = null) => {
-    return status(status).json({
-        succes,
+    return res.status(status).json({
+        success,
         timestamp: new Date().toISOString(),
         message,
         total: Array.isArray(data) ? data.length : data ? 1 : 0,
@@ -18,7 +18,7 @@ const respuestaEstandar = (res, status, success, message, data = null) => {
 
 
 
-const getTunros = (req, res) => {
+const getTurnos = (req, res) => {
    respuestaEstandar(res, 200, true, "Turnos obtenidos exitosamente", turnos);
 };
 
@@ -58,4 +58,4 @@ const deleteTurnos = (req, res) => {
 
 
 
-module.exports = {getTunros, createTurnos, deleteTurnos}; 
+module.exports = {getTurnos, createTurnos, deleteTurnos}; 
