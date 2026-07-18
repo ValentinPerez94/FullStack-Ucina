@@ -58,4 +58,11 @@ const deleteTurnos = (req, res) => {
 
 
 
-module.exports = {getTurnos, createTurnos, deleteTurnos}; 
+
+const devolverEspecialidad = (req, res) => {
+    const listaEspecialidades = turnos.map(objeto => objeto.especialidad);
+  
+    res.json(listaEspecialidades);
+}
+
+module.exports = {getTurnos, createTurnos, deleteTurnos, devolverEspecialidad}; 
